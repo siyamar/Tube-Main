@@ -1,9 +1,11 @@
-const loadVideos = async () => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/1000`);
+const loadVideos = async (categorysId = 1000) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categorysId}`);
     const data = await res.json();
     const videos = data.data;
     displayVideos(videos)
     console.log(videos)
+
+    
 
 }
 
@@ -12,6 +14,7 @@ const displayVideos = videos => {
     videoContainer.textContent = '';
     videos.forEach(video => {
         console.log(video)
+     
         const videoCard = document.createElement('div');
         videoCard.classList = 'card card-compact bg-base-100 shadow-xl mb-4'
         videoCard.innerHTML = `
@@ -33,17 +36,11 @@ const displayVideos = videos => {
                 </div>`;
               
         videoContainer.appendChild(videoCard)
-        
-    const sortByCategory = (video_category_id) => {
-    const filteredVideos = Videos.filter(video => video_category_id === video.category_id);
-    displayVideos(filteredVideos);
-
-}
-          
+    
     })
-    allVideos(videos)
 
 }
+loadVideos()
 
 function convertToDate(number) {
     const hours = Math.floor(number / 3600);
@@ -52,13 +49,13 @@ function convertToDate(number) {
     return hours+"hrs " + mins+ "min ago";
   }
   
-  loadVideos()
-
+ 
 
 const loadButton = async () => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/categories`);
     const data = await res.json();
     const buttons = data.data;
+    // console.log(buttons)
     displayBtns(buttons)
 
 }
@@ -71,12 +68,23 @@ const displayBtns = buttons => {
         console.log(button)
         const btn = document.createElement('button');
         btn.classList = 'btn btn-active'
-        btn.innerText = button.category
+        btn.innerHTML= `
+        <button onclick="sortByCategory(${button.category_id})">${button.category}</button>
+        `
+        // btn.innerText = button.category
         btn.id = button.category_id
-        btn.setAttribute('onclick', 'sortByCategory(button.category_id)');
+        // btn.setAttribute('onclick', 'sortByCategory(${button.category_id})');
         buttonContainer.appendChild(btn)
     })
 
 }
-
 loadButton()
+
+const sortByCategory = (categoryId)=>{
+    console.log(categoryId)
+    loadVideos(categoryId)
+}
+
+
+
+
