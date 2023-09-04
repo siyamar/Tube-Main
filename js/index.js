@@ -5,8 +5,6 @@ const loadVideos = async (categorysId = 1000) => {
     displayVideos(videos)
     console.log(videos)
 
-    
-
 }
 
 const displayVideos = videos => {
