@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Tube</title>
+    <!-- tailwined and daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- styles -->
+    <style>
+        .google-fonts-inter{
+            font-family: 'Inter', sans-serif;
+        }
+       
+    </style>
+</head>
+
+<body class="max-w-screen-xl mx-5 lg:mx-auto google-fonts-inter">
+    <header class="mt-12 mb-10">
+        <div class="flex justify-between mb-8">
+            <img src="./image/Logo.png" alt="">
+            <button class="btn btn-active">Sort by view</button>
+            <button class="btn btn-active bg-[#FF1F3D] hover:bg-[#ff1f3db9] text-white">Blog</button>
+        </div>
+        <hr class="h-[2px] bg-gray-300">
+    </header>
+    <main>
+        <div id="btn-container" class="flex justify-center items-center gap-10">
+        </div>
+
+        <div id="video-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+        </div>
+
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
+
+
+<!-- 
+    videoCard.innerHTML = `
+<figure><img src="${video.thumbnail}" /></figure>
+<div class="card-body">
+  <h2 class="card-title"></h2>
+  <p>If a dog chews shoes whose shoes does he choose?</p>
+  <div class="card-actions justify-center">
+    <button onclick ='handleShowDetail("")' class="btn btn-primary">Show Details</button>
+  </div>
+</div>
+`;
+
+
+${video?.authors[0]?.verified['true'] ? <img src="./image/Icon.png" alt=""></img> : ''}
+ -->
+
+<!-- <div class="card w-96 bg-base-100 shadow-xl">
+                <figure><img src="./image/Icon.png" alt="" /></figure>
+                <div class="card-body flex flex-row">
+                   <div>
+                    <img class="w-10" src="./image/Icon.png" alt="">
+                   </div>
+                    <div>
+                        <h2 class="card-title">Shoes!</h2>
+                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                    </div>
+                </div>
+              </div> -->
